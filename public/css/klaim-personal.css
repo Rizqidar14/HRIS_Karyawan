@@ -1,0 +1,104 @@
+   :root {
+            --bg-body: #f0f2f5;
+            --card-white: #ffffff;
+            --text-main: #1a1a2e;
+            --accent: #0d6efd;
+            --accent-hover: #0b5ed7;
+            --success: #198754;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --border: #e9ecef;
+            --radius: 20px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+        }
+
+        .container-wrapper {
+            padding: 2rem 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card-custom {
+            background: var(--card-white);
+            border: none;
+            border-radius: var(--radius);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-2px);
+        }
+
+        .form-control, .form-select {
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--accent), #0a58ca);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 0.875rem;
+            font-weight: 600;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+        }
+
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .status-pending { background: #fff3cd; color: #856404; }
+        .status-approved { background: #d1e7dd; color: #0a3622; }
+        .status-rejected { background: #f8d7da; color: #842029; }
+        .status-paid { background: #cfe2ff; color: #084298; }
+
+        .table-custom th {
+            background: #f8f9fa;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .nav-pills-custom .nav-link {
+            border-radius: 30px;
+            padding: 0.6rem 1.5rem;
+            font-weight: 500;
+        }
+
+        .nav-pills-custom .nav-link.active {
+            background: var(--accent);
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+        }
+
+        hr {
+            margin: 1.5rem 0;
+        }

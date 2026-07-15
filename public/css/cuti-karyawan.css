@@ -1,0 +1,112 @@
+ /* --- Reset & Base (Mengikuti Dashboard) --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f1f5f9; /* Tetap terang sesuai desain asli[cite: 1] */
+            color: #334155;
+            min-height: 100vh;
+        }
+
+        /* --- Layout Utama (Identik dengan Dashboard) --- */
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 15px; /* Padding responsive untuk mobile */
+        }
+
+        /* --- Header / Hero Section (Style Dashboard) --- */
+        .hero-welcome {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap; /* Responsive wrap[cite: 2] */
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .hero-welcome h2 {
+            font-weight: 800;
+            margin: 0;
+            font-size: clamp(1.25rem, 4vw, 1.75rem); /* Font adaptif[cite: 2] */
+            color: #0f172a;
+        }
+
+        /* Badge Tahun (Menggantikan Jam di Dashboard[cite: 2]) */
+        .live-clock {
+            background: #f1f5f9;
+            padding: 10px 18px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            min-width: 160px;
+        }
+        .year-text { display: block; font-weight: 800; font-size: 1.1rem; color: #64748b; }
+        .sub-text { font-size: 0.7rem; opacity: 0.7; font-weight: 600; text-transform: uppercase; }
+
+        /* --- Content Card (Style Dashboard[cite: 2]) --- */
+        .content-card {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- Filter Form (Grid System Dashboard[cite: 2]) --- */
+        .filter-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            padding: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .filter-grid { grid-template-columns: 2fr 1fr 1fr auto; align-items: flex-end; }
+        }
+
+        .form-label-custom {
+            font-size: 0.65rem;
+            color: #94a3b8;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-control-custom {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: 1.5px solid #e2e8f0;
+            font-size: 0.9rem;
+        }
+
+        /* --- Table Responsive (Style Dashboard[cite: 2]) --- */
+        .table-responsive { border: none; }
+        .table td { border-bottom: 1px solid #f1f5f9; color: #475569; padding: 15px; vertical-align: middle; }
+        .table th { background: #f8fafc; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: #64748b; padding: 15px; }
+
+        /* Mobile Breakpoint (Sesuai Dashboard[cite: 2]) */
+        @media (max-width: 768px) {
+            .hero-welcome {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 15px;
+            }
+            .live-clock { width: 100%; }
+            .dashboard-container { padding: 10px; }
+
+            /* Table to Card View[cite: 1] */
+            thead { display: none; }
+            tr { display: block; border-bottom: 8px solid #f1f5f9; padding: 10px; }
+            td { display: flex; justify-content: space-between; border: none; text-align: right; padding: 8px 10px; }
+            td::before { content: attr(data-label); font-weight: 700; font-size: 0.7rem; color: #94a3b8; }
+        }

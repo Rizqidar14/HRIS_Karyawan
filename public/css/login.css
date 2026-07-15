@@ -1,0 +1,179 @@
+:root {
+    --primary-color: #0f172a;
+    --primary-hover: #1e293b;
+    --bg-body: #f1f5f9;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-blend-mode: darken;
+    padding: 15px; /* Menjaga jarak di layar HP */
+}
+
+.container-custom {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.login-wrapper {
+    display: flex;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    min-height: 620px;
+    border: 1px solid #e2e8f0;
+    flex-direction: row; /* Default: Sampingan di desktop */
+}
+
+/* Panel Branding (Kiri) */
+.company-panel {
+    flex: 1.1;
+    background-image:
+        linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.3) 100%),
+        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-content h1 {
+    font-size: clamp(28px, 4vw, 42px); /* Font menyesuaikan lebar layar */
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.feature-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Panel Form (Kanan) */
+.login-panel {
+    flex: 1;
+    padding: 60px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-header h2 {
+    font-weight: 800;
+    font-size: 30px;
+    color: var(--primary-color);
+}
+
+.form-label {
+    color: var(--text-main);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px 14px 45px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.form-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.05);
+    outline: none;
+}
+
+.login-button {
+    background: var(--primary-color);
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 700;
+    color: white;
+    transition: all 0.2s;
+    margin-top: 10px;
+}
+
+.login-button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+@media (max-width: 992px) {
+    .login-wrapper {
+        flex-direction: column; /* Stack vertikal untuk tablet & HP */
+        min-height: auto;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .company-panel {
+        padding: 40px;
+        min-height: 250px; /* Panel branding jadi lebih pendek di mobile */
+    }
+
+    .feature-list {
+        display: none; /* Sembunyikan badge fitur di HP agar ringkas */
+    }
+
+    .login-panel {
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .company-panel {
+        padding: 30px;
+    }
+    .login-panel {
+        padding: 30px 20px;
+    }
+}

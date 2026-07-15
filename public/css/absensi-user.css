@@ -1,0 +1,174 @@
+:root {
+    --bg-body: #f4f6f9;
+    --card-white: #ffffff;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --border: #e5e7eb;
+    --radius-xl: 24px;
+    --text-main: #1f2937;
+    --text-muted: #4b5563;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    letter-spacing: -0.01em;
+}
+
+h1, h3, h5, h6 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    color: var(--text-main);
+}
+
+.container-wrapper {
+    padding: 2rem 1rem;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Bento Card Style */
+.bento-card {
+    background: var(--card-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 1.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+    height: 100%; /* Membantu menyamakan tinggi card kiri & kanan */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Custom Input & Select */
+.custom-input, .form-select-custom {
+    background: #f3f4f6;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.custom-input:focus, .form-select-custom:focus {
+    background: #fff;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    outline: none;
+}
+
+/* Main Button */
+.btn-blue-main {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 0.9rem;
+    font-weight: 700;
+    width: 100%;
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: auto; /* Dorong tombol ke bawah card jika konten pendek */
+}
+
+.btn-blue-main:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.btn-blue-main:disabled {
+    background: #9ca3af;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Status Badges di Tabel (Sinkronisasi dengan HTML) */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* Kelas warna penyesuaian baru */
+.bg-presence, .status-hadir { background: #dcfce7; color: #15803d; }
+.bg-sakit, .status-sakit { background: #fee2e2; color: #991b1b; }
+.bg-izin, .status-izin { background: #fff3cd; color: #856404; }
+.bg-alpha, .status-alpha { background: #f3f4f6; color: #4b5563; }
+
+/* Map Container */
+#manualMap {
+    width: 100%;
+    height: 230px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background-color: #e5e7eb;
+    z-index: 1;
+}
+
+#mapContainer {
+    transition: opacity 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+/* Pulse Icon Animasi */
+.pulse-icon {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    animation: pulse 2s infinite;
+    vertical-align: middle;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Table Styling */
+.table {
+    color: var(--text-main);
+}
+.table thead th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    padding: 12px 16px;
+    border-bottom: 2px solid var(--border);
+}
+.table tbody td {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Responsive Overrides */
+@media (max-width: 991px) {
+    .bento-card { height: auto; }
+}
+
+@media (max-width: 768px) {
+    .container-wrapper { padding: 1rem 0.5rem; }
+    .bento-card { padding: 1.25rem; border-radius: 20px; }
+    .table thead th { font-size: 0.65rem; padding: 10px; }
+    .table tbody td { font-size: 0.8rem; padding: 10px; }
+    #manualMap { height: 180px; }
+}

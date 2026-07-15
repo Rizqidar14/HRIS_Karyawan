@@ -1,0 +1,35 @@
+ :root {
+            --accent: #2563eb;
+            --radius: 20px;
+        }
+
+        body {
+            background-color: #f9fafb;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .bento-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .bg-hadir { background: #dcfce7; color: #15803d; }
+        .bg-sakit { background: #fee2e2; color: #991b1b; }
+        .bg-izin { background: #fff3cd; color: #856404; }
+
+        /* Styling tambahan untuk teks lembur agar rapi */
+        .text-lembur {
+            font-style: italic;
+            color: var(--accent);
+            font-size: 0.85rem;
+        }

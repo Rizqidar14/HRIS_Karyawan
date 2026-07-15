@@ -1,0 +1,12 @@
+  body { font-family: 'Inter', sans-serif; background: #f0f2f5; }
+        .container-wrapper { padding: 2rem; max-width: 1400px; margin: 0 auto; }
+        .card-custom { background: white; border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.05); padding: 1.5rem; margin-bottom: 1.5rem; }
+        .stat-card { background: white; border-radius: 20px; padding: 1.5rem; text-align: center; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
+        .status-badge { padding: 5px 12px; border-radius: 30px; font-size: 0.7rem; font-weight: 600; display: inline-block; }
+        .status-pending { background: #fff3cd; color: #856404; }
+        .status-approved { background: #d1e7dd; color: #0a3622; }
+        .status-rejected { background: #f8d7da; color: #842029; }
+        .status-paid { background: #cfe2ff; color: #084298; }
+        .table-custom th { background: #f8f9fa; font-weight: 600; padding: 1rem; }
+        .table-custom td { padding: 1rem; vertical-align: middle; }
+        .search-box { border-radius: 30px; padding: 0.6rem 1.2rem; }

@@ -1,0 +1,29 @@
+:root {
+            --bg-body: #f9fafb;
+            --card-white: #ffffff;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border: #e5e7eb;
+            --radius-xl: 24px;
+        }
+
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-body); color: var(--text-main); }
+        h1, h3, h5 { font-family: 'Bricolage Grotesque', sans-serif; }
+        .container-wrapper { padding: 2rem 1rem; max-width: 1200px; margin: 0 auto; }
+        .bento-card { background: var(--card-white); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 1.5rem; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05); height: 100%; }
+        .custom-input { background: #f3f4f6; border: 1px solid transparent; border-radius: 12px; padding: 0.8rem 1rem; font-weight: 500; }
+        .custom-input:focus { background: #fff; border-color: var(--accent); box-shadow: none; }
+        #manualMap { height: 280px; border-radius: 16px; border: 1px solid var(--border); z-index: 1; }
+        .btn-blue-main { background: var(--accent); color: white; border: none; border-radius: 14px; padding: 0.85rem; font-weight: 600; width: 100%; transition: 0.3s; cursor: pointer; }
+        .btn-blue-main:hover { background: var(--accent-hover); color: white; }
+        .status-badge { padding: 5px 12px; border-radius: 30px; font-size: 0.7rem; font-weight: 700; display: inline-block; }
+        .bg-presence { background: #dcfce7; color: #15803d; }
+        .bg-sakit { background: #fee2e2; color: #991b1b; }
+        .bg-izin { background: #fff3cd; color: #856404; }
+        .pulse-icon { display: inline-block; width: 10px; height: 10px; background: #22c55e; border-radius: 50%; margin-right: 5px; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
+        .table-responsive { border-radius: 16px; overflow: hidden; }
+        .table th { background: #f8fafc; border-bottom: 2px solid var(--border); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .table td { vertical-align: middle; font-size: 0.9rem; }

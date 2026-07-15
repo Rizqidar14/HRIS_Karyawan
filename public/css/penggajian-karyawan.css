@@ -1,0 +1,404 @@
+/* ==========================================================================
+   1. Base Structure & Global Reset
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    box-shadow: none;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #f1f5f9;
+    color: #334155;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.dashboard-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+/* ==========================================================================
+   2. Alert & Information Banners
+   ========================================================================== */
+.alert-info-payroll {
+    background-color: #fff8e6 !important;
+    border: 1px solid #ffe4a3 !important;
+    color: #856404 !important;
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin-bottom: 16px;
+    font-size: 0.85rem;
+}
+
+.alert-info-payroll i {
+    color: #e65100;
+}
+
+/* ==========================================================================
+   3. Layout Header & Top Statistics Card
+   ========================================================================== */
+.hero-welcome {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+.hero-welcome h2 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+}
+
+.total-budget-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 18px;
+    min-width: 220px;
+    text-align: right;
+}
+
+/* ==========================================================================
+   4. Content Cards & Filtering Component
+   ========================================================================== */
+.content-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+    overflow: hidden;
+}
+
+.filter-section {
+    background: #f8fafc;
+    padding: 14px 18px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filter-group label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   5. Table Components - No Scroll Configuration (Fit to Screen)
+   ========================================================================== */
+.card-header-payroll {
+    background: #f8fafc;
+    padding: 12px 18px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-responsive {
+    border: none;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    table-layout: fixed;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.table thead th {
+    background-color: #f8fafc;
+    color: #64748b;
+    font-weight: 800;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    padding: 12px 4px;
+    border-bottom: 2px solid #e2e8f0;
+    text-align: center;
+}
+
+.table thead th:first-child,
+.table tbody td:first-child {
+    text-align: left;
+    padding-left: 14px;
+}
+
+.table tbody td {
+    padding: 10px 4px;
+    border-bottom: 1px solid #f1f5f9;
+    text-align: center;
+}
+
+.table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.subtitle {
+    display: block;
+    font-size: 0.58rem;
+    font-weight: 400;
+    color: #94a3b8;
+    text-transform: none;
+    margin-top: 1px;
+    letter-spacing: 0;
+}
+
+/* ==========================================================================
+   6. Form Controls & Uniform Inputs
+   ========================================================================== */
+.input-group {
+    width: 100%;
+    min-width: 105px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.input-group-text {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #475569;
+    padding: 4px 6px;
+}
+
+.form-control-payroll {
+    border: 1.5px solid #cbd5e1;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #1e293b;
+    padding: 4px 6px;
+    height: 30px;
+    background-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-control-payroll:focus {
+    background-color: #ffffff;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+    outline: none;
+}
+
+.form-control-payroll.text-danger {
+    color: #b91c1c !important;
+    background-color: #fffafb;
+}
+
+/* Desain Dropdown Status Gaji */
+.payroll-status-select {
+    height: 30px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 4px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #334155;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+.payroll-status-select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+    outline: none;
+}
+
+/* ==========================================================================
+   7. Custom Badges & Component Accents
+   ========================================================================== */
+.jam-lembur-badge {
+    background: #fef3c7;
+    color: #d97706;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.potongan-badge {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 0.55rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 1px;
+}
+
+.total-netto-badge {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 115px;
+    box-shadow: 0 1px 2px rgba(16, 185, 129, 0.1);
+}
+
+.text-end { text-align: right !important; }
+.text-danger { color: #dc2626 !important; }
+.text-success { color: #10b981 !important; }
+.fw-bold { font-weight: 700 !important; }
+
+/* ==========================================================================
+   8. Buttons & Actions Components
+   ========================================================================== */
+.btn-payroll {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    height: 32px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Tombol Utama (Blue) */
+.btn-payroll-primary {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+.btn-payroll-primary:hover {
+    background-color: #2563eb;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.btn-payroll-primary:active {
+    background-color: #1d4ed8;
+    transform: scale(0.98);
+}
+
+/* Tombol Sukses/Simpan (Green) */
+.btn-payroll-success {
+    background-color: #10b981;
+    color: #ffffff;
+}
+
+.btn-payroll-success:hover {
+    background-color: #059669;
+    box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+.btn-payroll-success:active {
+    background-color: #047857;
+    transform: scale(0.98);
+}
+
+/* Tombol Sekunder/Batal (Gray) */
+.btn-payroll-secondary {
+    background-color: #ffffff;
+    border-color: #cbd5e1;
+    color: #475569;
+}
+
+.btn-payroll-secondary:hover {
+    background-color: #f8fafc;
+    border-color: #94a3b8;
+    color: #1e293b;
+}
+
+.btn-payroll-secondary:active {
+    background-color: #f1f5f9;
+    transform: scale(0.98);
+}
+
+/* Tombol Bahaya/Hapus (Red) */
+.btn-payroll-danger {
+    background-color: #fee2e2;
+    border-color: #fca5a5;
+    color: #dc2626;
+}
+
+.btn-payroll-danger:hover {
+    background-color: #dc2626;
+    border-color: #dc2626;
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(220, 38, 38, 0.15);
+}
+
+.btn-payroll-danger:active {
+    background-color: #b91c1c;
+    border-color: #b91c1c;
+    transform: scale(0.98);
+}
+
+/* State Disabled */
+.btn-payroll:disabled,
+.btn-payroll.disabled {
+    background-color: #e2e8f0 !important;
+    border-color: #e2e8f0 !important;
+    color: #94a3b8 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* ==========================================================================
+   9. Viewport Adjustment
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .form-control-payroll {
+        font-size: 0.75rem;
+    }
+    .input-group-text {
+        font-size: 0.65rem;
+        padding: 4px 4px;
+    }
+    .btn-payroll {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+}
